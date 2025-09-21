@@ -23,7 +23,7 @@ export default function DeliveryPerformance({ orders }) {
     <Card sx={{ borderRadius: 3, boxShadow: 3, height: '100%' }}>
       <CardContent>
         <Typography variant="h6" gutterBottom fontWeight="bold">
-          Delivery Performance
+          Delivery Person
         </Typography>
         {data.map((d) => (
           <Box key={d.name} sx={{ mb: 2 }}>
