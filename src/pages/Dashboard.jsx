@@ -1,3 +1,19 @@
+/**
+ * File: Dashboard.jsx
+ * Objective: Main dashboard layout for Restaurant Owner Dashboard.
+ *            Displays KPI stats, order types, frequent orders,
+ *            delivery performance, revenue trend, and orders table.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 22-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Initial creation of Dashboard structure.
+ *   - 21-09-2025: Integrated KPIStats, OrderTypeChart, and RevenueTrendChart.
+ *   - 22-09-2025: Fixed alignment and responsive layout issues and added objective and history comments.
+ */
+
+
 import React from "react";
 import { Grid, Box, Typography } from "@mui/material";
 import orders from "../data/orders.json";

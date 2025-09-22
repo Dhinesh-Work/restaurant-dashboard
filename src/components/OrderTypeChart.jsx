@@ -1,3 +1,16 @@
+/**
+ * File: OrderTypeChart.jsx
+ * Objective: Displays chart showing order distribution (Online vs Dine-in).
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 21-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Initial chart setup using Recharts.
+ *   - 21-09-2025: Improved UI and responsiveness.
+ *  - 22-09-2025: Added objective and history comments.
+ */
+
 import React from 'react'
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts'
 import { Typography } from '@mui/material'

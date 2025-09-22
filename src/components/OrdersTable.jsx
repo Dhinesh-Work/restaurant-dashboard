@@ -1,3 +1,17 @@
+/**
+ * File: OrdersTable.jsx
+ * Objective: Displays orders in a tabular format with search, pagination,
+ *            and delivery status.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 22-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Created table layout with MUI DataGrid.
+ *   - 21-09-2025: Added pagination and search functionality.
+ *  - 22-09-2025: Added objective and history comments.
+ */
+
 import React, { useState, useMemo } from 'react'
 import {
   Card, CardContent, Typography, Table, TableBody, TableCell,

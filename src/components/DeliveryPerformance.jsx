@@ -1,3 +1,17 @@
+/**
+ * File: DeliveryPerformance.jsx
+ * Objective: Renders delivery performance stats using progress bars.
+ *            Displays each delivery person's performance percentage.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 22-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Initial creation with static data.
+ *   - 21-09-2025: Integrated delivery performance with dynamic order data.
+ *  - 22-09-2025: Added objective and history comments.
+ */
+
 import React from 'react'
 import { Card, CardContent, Typography, Box, LinearProgress } from '@mui/material'
 

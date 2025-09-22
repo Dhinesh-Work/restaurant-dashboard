@@ -1,3 +1,18 @@
+/**
+ * File: RevenueTrendChart.jsx
+ * Objective: Shows revenue trend across different orders using a line chart.
+ *            Includes scrollable x-axis for large datasets.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 22-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Created line chart to plot order revenue.
+ *   - 21-09-2025: Added X and Y axis labels (Order ID & Revenue).
+ *   - 21-09-2025: Fixed scrollable chart width and tooltip improvements.
+ *  - 22-09-2025: Added objective and history comments.
+ */
+
 import React from 'react'
 import {
   LineChart,

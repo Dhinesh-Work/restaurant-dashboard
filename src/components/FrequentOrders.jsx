@@ -1,3 +1,17 @@
+/**
+ * File: FrequentOrders.jsx
+ * Objective: Displays the most frequently ordered items in a donut chart format.
+ *            Helps visualize top-selling items for business insights.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 22-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Created frequent orders visualization using Recharts.
+ *   - 21-09-2025: Added dynamic data integration from orders.json.
+ *   - 22-09-2025: Added objective and history comments.
+ */
+
 import React from 'react'
 import { Card, CardContent, Typography } from '@mui/material'
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts'

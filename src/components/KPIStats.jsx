@@ -1,3 +1,17 @@
+/**
+ * File: KPIStats.jsx
+ * Objective: Renders KPI statistic cards such as Revenue, Total Orders,
+ *            Pending Orders, Delivered, and Customers.
+ * Author: Dhinesh S
+ * Created Date: 20-09-2025
+ * Last Modified Date: 21-09-2025
+ * Modified By: Dhinesh S
+ * History:
+ *   - 20-09-2025: Component created to show KPIs from orders.json.
+ *   - 21-09-2025: Updated design for professional card layout.
+ *  - 22-09-2025: Added objective and history comments.
+ */
+
 import React from 'react'
 import { Grid, Card, CardContent, Typography, Box, Avatar } from '@mui/material'
 import PeopleIcon from '@mui/icons-material/People'
