@@ -1,22 +1,23 @@
 /**
  * File: OrdersTable.jsx
  * Objective: Displays orders in a tabular format with search, pagination,
- *            and delivery status.
+ *            and delivery status. Includes status dropdown filter.
  * Author: Dhinesh S
  * Created Date: 20-09-2025
- * Last Modified Date: 22-09-2025
+ * Last Modified Date: 23-09-2025
  * Modified By: Dhinesh S
  * History:
  *   - 20-09-2025: Created table layout with MUI DataGrid.
  *   - 21-09-2025: Added pagination and search functionality.
- *  - 22-09-2025: Added objective and history comments.
+ *   - 22-09-2025: Added objective and history comments.
+ *   - 23-09-2025: Integrated status dropdown filter with Autocomplete.
  */
 
 import React, { useState, useMemo } from 'react'
 import {
   Card, CardContent, Typography, Table, TableBody, TableCell,
   TableContainer, TableHead, TableRow, Paper, TextField,
-  TablePagination, Chip, Box
+  TablePagination, Chip, Box, Autocomplete
 } from '@mui/material'
 
 const statusColor = (s) => {
@@ -30,7 +31,15 @@ export default function OrdersTable({ orders }) {
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [selectedStatus, setSelectedStatus] = useState(null)
 
+  // Extract unique statuses from data
+  const statusOptions = useMemo(() => {
+    const statuses = orders.map((order) => order.Order_Status || 'Unknown')
+    return [...new Set(statuses)]
+  }, [orders])
+
+  // Filter orders based on search query and selected status
   const filtered = useMemo(() => {
     const q = query.toLowerCase()
     return orders.filter((o) => {
@@ -38,9 +47,17 @@ export default function OrdersTable({ orders }) {
       const customer = o?.Customer_Name ? o.Customer_Name.toLowerCase() : ''
       const type = o?.Order_Type ? o.Order_Type.toLowerCase() : ''
       const status = o?.Order_Status ? o.Order_Status.toLowerCase() : ''
-      return id.includes(q) || customer.includes(q) || type.includes(q) || status.includes(q)
+
+      const matchesQuery =
+        id.includes(q) || customer.includes(q) || type.includes(q) || status.includes(q)
+
+      const matchesStatus = selectedStatus
+        ? o.Order_Status === selectedStatus
+        : true
+
+      return matchesQuery && matchesStatus
     })
-  }, [orders, query])
+  }, [orders, query, selectedStatus])
 
   const handleChangePage = (e, newPage) => setPage(newPage)
   const handleChangeRowsPerPage = (e) => {
@@ -51,13 +68,29 @@ export default function OrdersTable({ orders }) {
   return (
     <Card>
       <CardContent>
-        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2} gap={2}>
           <Typography variant="h6">Orders</Typography>
+
+          <Autocomplete
+            size="small"
+            options={statusOptions}
+            value={selectedStatus}
+            onChange={(event, newValue) => {
+              setSelectedStatus(newValue)
+              setPage(0) // Reset pagination when filtering
+            }}
+            sx={{ width: 200 }}
+            renderInput={(params) => <TextField {...params} label="Filter by Status" />}
+          />
+
           <TextField
             size="small"
             placeholder="Search orders..."
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setPage(0) 
+            }}
           />
         </Box>
 

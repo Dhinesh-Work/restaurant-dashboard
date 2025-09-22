@@ -47,6 +47,7 @@ export default function KPIStats({ orders }) {
   const inTransit = orders.filter((o) => o.Order_Status === 'In Transit').length
   const delivered = orders.filter((o) => o.Order_Status === 'Delivered').length
   const customers = new Set(orders.map((o) => o.Customer_Name)).size
+  const deliveryPerson = new Set(orders.map((o) => o.Delivery_Person).filter(Boolean)).size
 
   return (
     <Grid container spacing={2}>
@@ -67,6 +68,9 @@ export default function KPIStats({ orders }) {
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={2}>
         <KPICard title="Customers" value={customers} icon={<PeopleIcon />} color="error.main" />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={2}>
+        <KPICard title="Delivery Persons" value={deliveryPerson} icon={<PeopleIcon />} color="error.main" />
       </Grid>
     </Grid>
   )
