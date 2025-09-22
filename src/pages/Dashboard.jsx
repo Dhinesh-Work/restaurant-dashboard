@@ -61,8 +61,8 @@ export default function Dashboard() {
               height: 400,
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",   // ✅ centers content
-              justifyContent: "center", // ✅ centers vertically
+              alignItems: "center",   //  centers content
+              justifyContent: "center", //  centers vertically
             }}
           >
             <Typography variant="h6" fontWeight="bold" gutterBottom>
@@ -136,7 +136,7 @@ export default function Dashboard() {
           bgcolor: "white",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center", // ✅ centers horizontally
+          alignItems: "center", //  centers horizontally
         }}
       >
         <Typography variant="h6" fontWeight="bold" gutterBottom>
