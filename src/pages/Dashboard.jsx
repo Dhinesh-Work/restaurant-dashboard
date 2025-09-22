@@ -11,6 +11,7 @@
  *   - 20-09-2025: Initial creation of Dashboard structure.
  *   - 21-09-2025: Integrated KPIStats, OrderTypeChart, and RevenueTrendChart.
  *   - 22-09-2025: Fixed alignment and responsive layout issues and added objective and history comments.
+ *  - 22-09-2025: Added DeliveryPerson Stats card
  */
 
 
